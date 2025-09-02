@@ -10,7 +10,7 @@ const actions = [
 
 export function ActionButtons() {
   return (
-    <section className="bg-navy-primary px-4 pb-6 rounded-b-2xl">
+    <section className="bg-navy-primary px-4 pb-6 rounded-b-3xl">
       <div className="flex justify-between gap-6">
         {actions.map((action, index) => (
           <div key={action.label} className="flex flex-col items-center gap-2">

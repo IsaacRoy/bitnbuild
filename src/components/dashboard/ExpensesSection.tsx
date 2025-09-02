@@ -12,7 +12,7 @@ const expenses = [
 
 export function ExpensesSection() {
   return (
-    <section className="bg-muted/60 rounded-2xl mx-4 mt-6 mb-4 px-4 py-6 shadow-card">
+    <section className="bg-muted/60 rounded-2xl mx-4 mt-6 mb-4 px-4 py-6 pt-8 shadow-card">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-bold text-foreground">Expenses</h2>
         <span className="text-lg font-semibold text-foreground">2,523$</span>
