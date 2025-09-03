@@ -9,18 +9,20 @@ export function Dashboard() {
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Fixed Navy Header Area */}
-      <div className="fixed top-0 left-0 right-0 z-40 bg-navy-primary">
+      <div className="fixed top-0 left-0 right-0 z-40 bg-navy-primary rounded-b-3xl">
         <Header />
         <BalanceSection />
         <ActionButtons />
       </div>
-      
+
       {/* Scrollable Content Area */}
-      <div className="pt-64"> {/* Adjust this value based on header height */}
+      <div className="pt-72">
+        {" "}
+        {/* Increased padding to prevent overlap */}
         <ExpensesSection />
         <TransactionsSection />
       </div>
-      
+
       <BottomNavigation />
     </div>
   );
