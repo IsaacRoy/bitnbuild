@@ -6,18 +6,18 @@ import {
   User,
   TrendingDown,
   TrendingUp,
+  Brain,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { ScanIcon } from "@/components/icons/ScanIcon";
 
 const navItems = [
   { icon: Bot, label: "Fingo", active: false, path: "/fingo" },
-  { icon: ScanIcon, label: "Scan", active: false, path: "/" },
-  { icon: Plus, label: "Add", isCenter: true, path: "/" },
   { icon: BarChart3, label: "Analytics", active: false, path: "/" },
-  { icon: User, label: "Profile", active: false, path: "/" },
+  { icon: Plus, label: "Add", isCenter: true, path: "/" },
+  { icon: Brain, label: "IdeaFi", active: false, path: "/ideafi" },
+  { icon: User, label: "Profile", active: false, path: "/profile" },
 ];
 
 export function BottomNavigation() {

@@ -18,11 +18,79 @@ export function Fingo() {
       id: 1,
       text: "Hello! I'm Fingo, your AI financial assistant. How can I help you manage your finances today?",
       isUser: false,
-      timestamp: new Date(),
+      timestamp: new Date(Date.now() - 600000), // 10 minutes ago
+    },
+    {
+      id: 2,
+      text: "Hi Fingo! I've been spending a lot on food delivery lately. Any tips?",
+      isUser: true,
+      timestamp: new Date(Date.now() - 540000), // 9 minutes ago
+    },
+    {
+      id: 3,
+      text: "Great question! I can see from your spending patterns that food delivery has increased by 40% this month. Here are some practical tips:\n\n🍳 Try meal prepping on Sundays\n📱 Use grocery delivery instead (usually 50% cheaper)\n⏰ Set a weekly food delivery budget of ₹1,000\n🥗 Cook 2-3 simple meals at home\n\nThis could save you ₹2,000+ per month! Would you like me to suggest some quick 15-minute recipes?",
+      isUser: false,
+      timestamp: new Date(Date.now() - 480000), // 8 minutes ago
+    },
+    {
+      id: 4,
+      text: "That's helpful! What about my investment portfolio? Should I invest more in mutual funds?",
+      isUser: true,
+      timestamp: new Date(Date.now() - 420000), // 7 minutes ago
+    },
+    {
+      id: 5,
+      text: "Based on your current portfolio, you have 60% in equity funds and 40% in debt. This is actually well-balanced for your age group! 📊\n\n💡 Recommendations:\n• Your SIP of ₹5,000/month is great - consider increasing by ₹1,000 next quarter\n• You could add 10% to international funds for diversification\n• Your emergency fund is solid at 6 months expenses\n\nYour portfolio is on track to reach ₹50 lakhs in 8 years at current rate! 🚀",
+      isUser: false,
+      timestamp: new Date(Date.now() - 360000), // 6 minutes ago
+    },
+    {
+      id: 6,
+      text: "Wow, that's encouraging! How can I track my daily expenses better?",
+      isUser: true,
+      timestamp: new Date(Date.now() - 300000), // 5 minutes ago
+    },
+    {
+      id: 7,
+      text: "Perfect timing! Here's my smart tracking system:\n\n📸 Use our Scanner feature to automatically capture receipts\n🏷️ I'll categorize expenses for you automatically\n📊 Get weekly spending summaries every Sunday\n⚡ Set instant alerts when you exceed category budgets\n\n💫 Pro tip: Take a photo of every receipt immediately after purchase. I'll handle the rest! Try scanning one right now using the Scanner tab.",
+      isUser: false,
+      timestamp: new Date(Date.now() - 240000), // 4 minutes ago
     },
   ]);
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
+
+  // Dummy AI responses based on common financial queries
+  const getSmartResponse = (userInput: string) => {
+    const input = userInput.toLowerCase();
+    
+    if (input.includes("budget")) {
+      return "I recommend the 50-30-20 rule: 50% for needs, 30% for wants, 20% for savings. Based on your ₹45,000 monthly income, that's ₹22,500 for essentials, ₹13,500 for lifestyle, and ₹9,000 for savings. You're currently saving ₹8,200, so you're close! 💪";
+    }
+    
+    if (input.includes("save") || input.includes("saving")) {
+      return "Great question! Your current saving rate is 18% which is above average! 🎯 To boost it:\n\n• Automate savings on salary day\n• Use the 24-hour rule for purchases >₹1,000\n• Review subscriptions monthly\n• Try a no-spend challenge once a month\n\nSmall changes can increase your savings by ₹3,000/month! 🚀";
+    }
+    
+    if (input.includes("invest") || input.includes("mutual fund") || input.includes("stock")) {
+      return "Smart thinking! For beginners, I suggest:\n\n📈 Large cap funds (60%) - stable growth\n🌱 Mid cap funds (20%) - higher returns\n🌍 International funds (10%) - diversification\n💰 Debt funds (10%) - stability\n\nStart with ₹2,000/month SIP and increase by 10% annually. Time in market beats timing the market! 📊";
+    }
+    
+    if (input.includes("emergency") || input.includes("fund")) {
+      return "Your emergency fund should cover 6-12 months of expenses. Based on your spending of ₹35,000/month, aim for ₹2.5 lakhs.\n\n✅ You currently have ₹2.1 lakhs - almost there!\n🎯 Add ₹5,000 more to complete it\n🏦 Keep it in a high-yield savings account for easy access\n\nYou're doing great! 🌟";
+    }
+    
+    if (input.includes("debt") || input.includes("loan") || input.includes("emi")) {
+      return "Let's tackle your debt strategically! 💪\n\n🔥 Avalanche method: Pay minimums on all, extra on highest interest\n❄️ Snowball method: Pay smallest debts first for motivation\n\nYour current EMI-to-income ratio is 35% - ideal is under 40%. Consider prepaying your personal loan (12% interest) before home loan (8.5% interest). Save ₹45,000 in interest! 💰";
+    }
+    
+    if (input.includes("tax") || input.includes("80c")) {
+      return "Tax season made easy! 📋\n\n💼 You can save ₹46,800 under 80C with:\n• ELSS funds: ₹1,50,000 (₹12,500/month)\n• Already investing: ₹60,000\n• Need ₹90,000 more\n\n💡 Quick wins:\n• PPF top-up: ₹50,000\n• ELSS SIP: ₹3,500/month\n• Life insurance: ₹25,000\n\nTotal tax saved: ₹31,200! 🎉";
+    }
+    
+    // Default response for other queries
+    return `I understand you're asking about "${userInput}". That's a great financial question! Based on your profile, I can provide personalized advice. Here are some quick insights:\n\n💡 Your current financial health score: 7.8/10\n📊 Monthly surplus: ₹9,800\n🎯 On track for your goals!\n\nWould you like me to dive deeper into any specific area of your finances?`;
+  };
 
   const handleSendMessage = () => {
     if (inputValue.trim() === "") return;
@@ -36,19 +104,16 @@ export function Fingo() {
 
     setMessages((prev) => [...prev, newUserMessage]);
 
-    // Simulate AI response
+    // Simulate AI response with smart replies
     setTimeout(() => {
       const aiResponse: Message = {
         id: messages.length + 2,
-        text:
-          "I understand you're asking about: " +
-          inputValue +
-          ". Let me help you with that financial query. I can assist with budgeting, expense tracking, investment advice, and financial planning.",
+        text: getSmartResponse(inputValue),
         isUser: false,
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, aiResponse]);
-    }, 1000);
+    }, 1000 + Math.random() * 2000); // Random delay between 1-3 seconds
 
     setInputValue("");
   };

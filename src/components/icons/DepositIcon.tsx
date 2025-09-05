@@ -25,12 +25,9 @@ export function DepositIcon({ className = "h-5 w-5" }: { className?: string }) {
         strokeWidth="1.5"
         fill="none"
       />
-      
+
       {/* Graduation cap */}
-      <path
-        d="M8 8l4-2 4 2-4 2-4-2z"
-        fill="currentColor"
-      />
+      <path d="M8 8l4-2 4 2-4 2-4-2z" fill="currentColor" />
       <path
         d="M16 8v3a4 4 0 0 1-8 0V8"
         stroke="currentColor"
@@ -38,7 +35,7 @@ export function DepositIcon({ className = "h-5 w-5" }: { className?: string }) {
         fill="none"
         strokeLinecap="round"
       />
-      
+
       {/* Graduation cap tassel */}
       <circle cx="16.5" cy="7.5" r="0.5" fill="currentColor" />
       <path

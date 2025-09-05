@@ -1,6 +1,46 @@
 <svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="192" height="192" rx="24" fill="#1e2752"/>
-  <path d="M48 96C48 69.49 69.49 48 96 48C122.51 48 144 69.49 144 96C144 122.51 122.51 144 96 144C69.49 144 48 122.51 48 96Z" fill="white"/>
-  <path d="M84 72H108V84H96V108H84V72Z" fill="#1e2752"/>
-  <circle cx="90" cy="120" r="6" fill="#1e2752"/>
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded square background -->
+  <rect width="192" height="192" rx="42" ry="42" fill="url(#bgGradient)"/>
+  
+  <!-- Graph grid lines (subtle) -->
+  <g opacity="0.2">
+    <line x1="48" y1="48" x2="48" y2="144" stroke="white" stroke-width="1"/>
+    <line x1="96" y1="48" x2="96" y2="144" stroke="white" stroke-width="1"/>
+    <line x1="144" y1="48" x2="144" y2="144" stroke="white" stroke-width="1"/>
+    <line x1="48" y1="72" x2="144" y2="72" stroke="white" stroke-width="1"/>
+    <line x1="48" y1="96" x2="144" y2="96" stroke="white" stroke-width="1"/>
+    <line x1="48" y1="120" x2="144" y2="120" stroke="white" stroke-width="1"/>
+  </g>
+  
+  <!-- Chart bars -->
+  <g>
+    <rect x="58" y="108" width="16" height="24" fill="white" rx="2"/>
+    <rect x="86" y="96" width="16" height="36" fill="white" rx="2"/>
+    <rect x="114" y="84" width="16" height="48" fill="white" rx="2"/>
+  </g>
+  
+  <!-- Trending line -->
+  <path d="M48 120 L72 96 L96 72 L120 54 L144 42" 
+        stroke="white" 
+        stroke-width="4" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+  
+  <!-- Data points -->
+  <circle cx="72" cy="96" r="4" fill="white"/>
+  <circle cx="96" cy="72" r="4" fill="white"/>
+  <circle cx="120" cy="54" r="4" fill="white"/>
+  
+  <!-- Trend arrow -->
+  <g transform="translate(135, 35)">
+    <path d="M0 7 L7 0 L7 4 L12 4 L12 10 L7 10 L7 7 Z" fill="white"/>
+  </g>
 </svg>
