@@ -12,10 +12,30 @@ import { LexFiIcon } from "@/components/icons/LexFiIcon";
 import { useNavigate } from "react-router-dom";
 
 const actions = [
-  { icon: SpensIcon, label: "Spens", color: "bg-expense-entertainment", path: "/spens" },
-  { icon: GenieIcon, label: "Genie", color: "bg-expense-sport", path: "/genie" },
-  { icon: IdeaFiIcon, label: "IdeaFi", color: "bg-expense-food", path: "/ideafi" },
-  { icon: LexFiIcon, label: "LexFi", color: "bg-expense-bills", path: "/lexfi" },
+  {
+    icon: SpensIcon,
+    label: "Spens",
+    color: "bg-expense-entertainment",
+    path: "/spens",
+  },
+  {
+    icon: GenieIcon,
+    label: "Genie",
+    color: "bg-expense-sport",
+    path: "/genie",
+  },
+  {
+    icon: IdeaFiIcon,
+    label: "IdeaFi",
+    color: "bg-expense-food",
+    path: "/ideafi",
+  },
+  {
+    icon: LexFiIcon,
+    label: "LexFi",
+    color: "bg-expense-bills",
+    path: "/lexfi",
+  },
 ];
 
 export function ActionButtons() {

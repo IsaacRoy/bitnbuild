@@ -1,5 +1,15 @@
 import { useState } from "react";
-import { ArrowLeft, Camera, Upload, FileText, BarChart3, PieChart, TrendingUp, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  ArrowLeft,
+  Camera,
+  Upload,
+  FileText,
+  BarChart3,
+  PieChart,
+  TrendingUp,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -36,7 +46,7 @@ const dummyScannedItems: ScannedItem[] = [
     category: "Food & Dining",
     date: "Today, 2:30 PM",
     merchant: "Fresh Market",
-    confidence: 98
+    confidence: 98,
   },
   {
     id: 2,
@@ -45,7 +55,7 @@ const dummyScannedItems: ScannedItem[] = [
     category: "Food & Dining",
     date: "Today, 10:15 AM",
     merchant: "Café Coffee Day",
-    confidence: 95
+    confidence: 95,
   },
   {
     id: 3,
@@ -54,7 +64,7 @@ const dummyScannedItems: ScannedItem[] = [
     category: "Transportation",
     date: "Yesterday, 8:45 PM",
     merchant: "Uber India",
-    confidence: 100
+    confidence: 100,
   },
   {
     id: 4,
@@ -63,7 +73,7 @@ const dummyScannedItems: ScannedItem[] = [
     category: "Healthcare",
     date: "Yesterday, 4:20 PM",
     merchant: "Apollo Clinic",
-    confidence: 92
+    confidence: 92,
   },
   {
     id: 5,
@@ -72,8 +82,8 @@ const dummyScannedItems: ScannedItem[] = [
     category: "Bills & Utilities",
     date: "2 days ago",
     merchant: "Airtel",
-    confidence: 100
-  }
+    confidence: 100,
+  },
 ];
 
 const dummyAnalytics: ScanAnalytics = {
@@ -84,7 +94,7 @@ const dummyAnalytics: ScanAnalytics = {
   avgAmount: 123,
   thisMonth: 15680,
   lastMonth: 12450,
-  trend: "up"
+  trend: "up",
 };
 
 export function Scanner() {
@@ -108,9 +118,9 @@ export function Scanner() {
         category: "Food & Dining",
         date: "Just now",
         merchant: "The Great Kabab Factory",
-        confidence: 96
+        confidence: 96,
       };
-      setScannedItems(prev => [newItem, ...prev]);
+      setScannedItems((prev) => [newItem, ...prev]);
       setIsScanning(false);
     }, 3000);
   };
@@ -118,11 +128,11 @@ export function Scanner() {
   const getCategoryColor = (category: string) => {
     const colors: { [key: string]: string } = {
       "Food & Dining": "bg-orange-100 text-orange-800",
-      "Transportation": "bg-blue-100 text-blue-800",
-      "Healthcare": "bg-green-100 text-green-800",
+      Transportation: "bg-blue-100 text-blue-800",
+      Healthcare: "bg-green-100 text-green-800",
       "Bills & Utilities": "bg-purple-100 text-purple-800",
-      "Shopping": "bg-pink-100 text-pink-800",
-      "Entertainment": "bg-indigo-100 text-indigo-800"
+      Shopping: "bg-pink-100 text-pink-800",
+      Entertainment: "bg-indigo-100 text-indigo-800",
     };
     return colors[category] || "bg-gray-100 text-gray-800";
   };
@@ -134,12 +144,32 @@ export function Scanner() {
   };
 
   const categoryData = [
-    { name: "Food & Dining", amount: 4500, percentage: 29, color: "bg-orange-400" },
-    { name: "Transportation", amount: 2800, percentage: 18, color: "bg-blue-400" },
+    {
+      name: "Food & Dining",
+      amount: 4500,
+      percentage: 29,
+      color: "bg-orange-400",
+    },
+    {
+      name: "Transportation",
+      amount: 2800,
+      percentage: 18,
+      color: "bg-blue-400",
+    },
     { name: "Shopping", amount: 3200, percentage: 20, color: "bg-pink-400" },
-    { name: "Bills & Utilities", amount: 2100, percentage: 13, color: "bg-purple-400" },
+    {
+      name: "Bills & Utilities",
+      amount: 2100,
+      percentage: 13,
+      color: "bg-purple-400",
+    },
     { name: "Healthcare", amount: 1600, percentage: 10, color: "bg-green-400" },
-    { name: "Entertainment", amount: 1480, percentage: 10, color: "bg-indigo-400" }
+    {
+      name: "Entertainment",
+      amount: 1480,
+      percentage: 10,
+      color: "bg-indigo-400",
+    },
   ];
 
   return (
@@ -180,7 +210,8 @@ export function Scanner() {
             </CardHeader>
             <CardContent>
               <p className="text-white/90 text-sm mb-4">
-                Automatically extract and categorize expenses from receipts, bills, and invoices
+                Automatically extract and categorize expenses from receipts,
+                bills, and invoices
               </p>
               <div className="flex gap-3">
                 <Button
@@ -216,19 +247,27 @@ export function Scanner() {
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
-                      <p className="text-2xl font-bold text-indigo-600">{dummyAnalytics.totalScanned}</p>
+                      <p className="text-2xl font-bold text-indigo-600">
+                        {dummyAnalytics.totalScanned}
+                      </p>
                       <p className="text-xs text-gray-600">Total Scans</p>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
-                      <p className="text-2xl font-bold text-green-600">₹{dummyAnalytics.totalAmount.toLocaleString()}</p>
+                      <p className="text-2xl font-bold text-green-600">
+                        ₹{dummyAnalytics.totalAmount.toLocaleString()}
+                      </p>
                       <p className="text-xs text-gray-600">Total Amount</p>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
-                      <p className="text-2xl font-bold text-purple-600">{dummyAnalytics.categoriesCount}</p>
+                      <p className="text-2xl font-bold text-purple-600">
+                        {dummyAnalytics.categoriesCount}
+                      </p>
                       <p className="text-xs text-gray-600">Categories</p>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
-                      <p className="text-2xl font-bold text-orange-600">₹{dummyAnalytics.avgAmount}</p>
+                      <p className="text-2xl font-bold text-orange-600">
+                        ₹{dummyAnalytics.avgAmount}
+                      </p>
                       <p className="text-xs text-gray-600">Avg Amount</p>
                     </div>
                   </div>
@@ -244,15 +283,24 @@ export function Scanner() {
                         <div key={index} className="space-y-1">
                           <div className="flex justify-between text-sm">
                             <span>{category.name}</span>
-                            <span className="font-medium">₹{category.amount.toLocaleString()}</span>
+                            <span className="font-medium">
+                              ₹{category.amount.toLocaleString()}
+                            </span>
                           </div>
                           <div className="flex items-center gap-2">
                             <div className="flex-1 bg-gray-200 rounded-full h-2">
-                              <div className={`h-2 rounded-full ${category.color} transition-all duration-500`}>
-                                <Progress value={category.percentage} className="h-2 bg-transparent" />
+                              <div
+                                className={`h-2 rounded-full ${category.color} transition-all duration-500`}
+                              >
+                                <Progress
+                                  value={category.percentage}
+                                  className="h-2 bg-transparent"
+                                />
                               </div>
                             </div>
-                            <span className="text-xs text-gray-500 w-8">{category.percentage}%</span>
+                            <span className="text-xs text-gray-500 w-8">
+                              {category.percentage}%
+                            </span>
                           </div>
                         </div>
                       ))}
@@ -288,12 +336,18 @@ export function Scanner() {
                     <Camera className="h-8 w-8 text-indigo-600 animate-pulse" />
                   </div>
                   <div>
-                    <p className="font-medium text-indigo-900">Scanning Receipt...</p>
-                    <p className="text-sm text-indigo-600">Processing with AI technology</p>
+                    <p className="font-medium text-indigo-900">
+                      Scanning Receipt...
+                    </p>
+                    <p className="text-sm text-indigo-600">
+                      Processing with AI technology
+                    </p>
                   </div>
                   <div className="space-y-2">
                     <Progress value={60} className="h-2" />
-                    <p className="text-xs text-indigo-600">Extracting text and amounts...</p>
+                    <p className="text-xs text-indigo-600">
+                      Extracting text and amounts...
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -310,12 +364,18 @@ export function Scanner() {
             </CardHeader>
             <CardContent className="space-y-3">
               {scannedItems.map((item) => (
-                <div key={item.id} className="border rounded-lg p-3 hover:bg-gray-50 transition-colors">
+                <div
+                  key={item.id}
+                  className="border rounded-lg p-3 hover:bg-gray-50 transition-colors"
+                >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <h4 className="font-medium text-sm">{item.item}</h4>
-                        <Badge className={getCategoryColor(item.category)} variant="secondary">
+                        <Badge
+                          className={getCategoryColor(item.category)}
+                          variant="secondary"
+                        >
                           {item.category}
                         </Badge>
                       </div>
@@ -333,7 +393,11 @@ export function Scanner() {
                         ) : (
                           <AlertCircle className="h-3 w-3 text-yellow-600" />
                         )}
-                        <span className={`text-xs ${getConfidenceColor(item.confidence)}`}>
+                        <span
+                          className={`text-xs ${getConfidenceColor(
+                            item.confidence
+                          )}`}
+                        >
                           {item.confidence}%
                         </span>
                       </div>
@@ -350,8 +414,9 @@ export function Scanner() {
               <div className="text-center">
                 <p className="text-lg font-semibold mb-2">💡 Scanner Tips</p>
                 <p className="text-white/90 text-sm">
-                  For best results: ensure good lighting, hold camera steady, and capture the entire receipt. 
-                  AI accuracy improves with each scan!
+                  For best results: ensure good lighting, hold camera steady,
+                  and capture the entire receipt. AI accuracy improves with each
+                  scan!
                 </p>
               </div>
             </CardContent>

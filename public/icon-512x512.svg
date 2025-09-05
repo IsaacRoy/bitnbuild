@@ -1,46 +1,42 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bgGradient512" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- Rounded square background -->
+  <!-- Rounded square background like iOS icon -->
   <rect width="512" height="512" rx="112" ry="112" fill="url(#bgGradient512)"/>
   
-  <!-- Graph grid lines (subtle) -->
-  <g opacity="0.2">
-    <line x1="128" y1="128" x2="128" y2="384" stroke="white" stroke-width="2"/>
-    <line x1="256" y1="128" x2="256" y2="384" stroke="white" stroke-width="2"/>
-    <line x1="384" y1="128" x2="384" y2="384" stroke="white" stroke-width="2"/>
-    <line x1="128" y1="192" x2="384" y2="192" stroke="white" stroke-width="2"/>
-    <line x1="128" y1="256" x2="384" y2="256" stroke="white" stroke-width="2"/>
-    <line x1="128" y1="320" x2="384" y2="320" stroke="white" stroke-width="2"/>
-  </g>
-  
-  <!-- Chart bars -->
+  <!-- Bar chart - 4 ascending bars -->
   <g>
-    <rect x="154" y="288" width="44" height="64" fill="white" rx="6"/>
-    <rect x="234" y="256" width="44" height="96" fill="white" rx="6"/>
-    <rect x="314" y="224" width="44" height="128" fill="white" rx="6"/>
+    <!-- Bar 1 -->
+    <rect x="85" y="341" width="64" height="85" fill="white" rx="10"/>
+    <!-- Bar 2 -->
+    <rect x="171" y="299" width="64" height="127" fill="white" rx="10"/>
+    <!-- Bar 3 -->
+    <rect x="257" y="256" width="64" height="170" fill="white" rx="10"/>
+    <!-- Bar 4 -->
+    <rect x="343" y="213" width="64" height="213" fill="white" rx="10"/>
   </g>
   
-  <!-- Trending line -->
-  <path d="M128 320 L192 256 L256 192 L320 144 L384 112" 
+  <!-- Trending arrow line -->
+  <path d="M117 384 L203 341 L289 288 L375 235 L427 192" 
         stroke="white" 
-        stroke-width="10" 
+        stroke-width="16" 
         stroke-linecap="round" 
         stroke-linejoin="round" 
         fill="none"/>
   
-  <!-- Data points -->
-  <circle cx="192" cy="256" r="10" fill="white"/>
-  <circle cx="256" cy="192" r="10" fill="white"/>
-  <circle cx="320" cy="144" r="10" fill="white"/>
+  <!-- Data points on the line -->
+  <circle cx="203" cy="341" r="16" fill="white"/>
+  <circle cx="289" cy="288" r="16" fill="white"/>
+  <circle cx="375" cy="235" r="16" fill="white"/>
   
-  <!-- Trend arrow -->
-  <g transform="translate(360, 94)">
-    <path d="M0 18 L18 0 L18 10 L32 10 L32 26 L18 26 L18 18 Z" fill="white"/>
+  <!-- Arrow head pointing up-right -->
+  <g transform="translate(405, 170)">
+    <path d="M0 42 L21 21 L42 42 L32 42 L32 53 L11 53 L11 42 Z" fill="white"/>
+    <path d="M21 21 L21 32 L32 32" stroke="white" stroke-width="5" stroke-linecap="round" fill="none"/>
   </g>
 </svg>

@@ -1,10 +1,12 @@
-import React from 'react';
+import React from "react";
 
 interface IdeaFiIconProps {
   className?: string;
 }
 
-export const IdeaFiIcon: React.FC<IdeaFiIconProps> = ({ className = "w-5 h-5" }) => {
+export const IdeaFiIcon: React.FC<IdeaFiIconProps> = ({
+  className = "w-5 h-5",
+}) => {
   return (
     <svg
       viewBox="0 0 24 24"
