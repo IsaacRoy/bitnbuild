@@ -1,15 +1,15 @@
-**FinSight**  
+# **FinSight**  
 Smarter Investing, Simplified.  
 
 ---
 
- 📌 Overview  
+Overview  
 Investing often feels overwhelming — too much noise, too many options.  
 *FinSight* cuts through the clutter with AI-driven insights, delivering clear and personalized investment ideas you can trust.  
 
 ---
 
- 🔑 Features  
+Features  
 - Personalized strategies based on *budget, time horizon, and risk level*  
 - Real-time market insights that adapt with trends  
 - Side-by-side scenario comparison for better decision-making  
@@ -18,7 +18,7 @@ Investing often feels overwhelming — too much noise, too many options.
 
 ---
 
- 🛠 Tech Stack  
+Tech Stack  
 This project is built with:  
 - *Vite* – fast build tool  
 - *TypeScript* – type-safe JavaScript  
@@ -28,7 +28,7 @@ This project is built with:
 
 ---
 
-⚡ Getting Started  
+Getting Started  
 
 *Clone the repository*  
 
